@@ -4,6 +4,14 @@ import {
   Route,
   Link
 } from 'react-router-dom'
+import { 
+  Button,
+  Navbar,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  NavbarText } from 'reactstrap'
 import Home from './pages/Home'
 import Support from './pages/Support'
 
@@ -11,10 +19,22 @@ const App = () => {
   return (
     <Router>
       <div>
-        <nav>
-          <Link to="/">Home</Link>
-          <Link to="/support">Support</Link>
-        </nav>
+        <Navbar color="light" light expand="md">
+          <NavbarBrand href="/">reactstrap</NavbarBrand>
+            <Nav className="mr-auto" navbar>
+              <NavItem>
+                <NavLink>
+                  <Link to="/">Home</Link>
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink>
+                  <Link to="/support">Support</Link>
+                </NavLink>
+              </NavItem>
+            </Nav>
+            <NavbarText>Simple Text</NavbarText>
+        </Navbar>
         <Switch>
           <Route exact path="/">
             <Home />

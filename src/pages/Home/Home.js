@@ -1,6 +1,20 @@
+import {
+  Container,
+  Row,
+  Col } from 'reactstrap'
+
 const Home = () => {
   return (
-    <h1>This is the home page.</h1>
+    <Container>
+      <Row>
+        <Col xs={6}>
+          hello
+        </Col>
+        <Col xs={6}>
+          hello
+        </Col>
+      </Row>
+    </Container>
   )
 }
 
