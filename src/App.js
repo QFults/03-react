@@ -20,11 +20,11 @@ const App = () => {
     <Router>
       <div>
         <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">reactstrap</NavbarBrand>
+          <NavbarBrand>reactstrap</NavbarBrand>
             <Nav className="mr-auto" navbar>
               <NavItem>
                 <NavLink>
-                  <Link to="/">Home</Link>
+                  <Link to="/03-react">Home</Link>
                 </NavLink>
               </NavItem>
               <NavItem>
@@ -36,10 +36,10 @@ const App = () => {
             <NavbarText>Simple Text</NavbarText>
         </Navbar>
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/03-react/">
             <Home />
           </Route>
-          <Route path="/support">
+          <Route path="/03-react/support">
             <Support />
           </Route>
         </Switch>
