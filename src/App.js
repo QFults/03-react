@@ -1,50 +1,28 @@
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from 'react-router-dom'
-import { 
-  Button,
-  Navbar,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  NavbarText } from 'reactstrap'
-import Home from './pages/Home'
-import Support from './pages/Support'
+import { useState } from 'react'
 
 const App = () => {
+
+  const [countState, setCountState] = useState({
+    count: 0,
+    name: 'John Doe'
+  })
+
+  const handleIncrementCount = () => {
+    setCountState({ ...countState, count: countState.count + 1 })
+  }
+
+  const handleDecrementCount = () => {
+    setCountState({ ...countState, count: countState.count - 1 })
+  }
+
+
   return (
-    <Router>
-      <div>
-        <Navbar color="light" light expand="md">
-          <NavbarBrand>reactstrap</NavbarBrand>
-            <Nav className="mr-auto" navbar>
-              <NavItem>
-                <NavLink>
-                  <Link to="/03-react">Home</Link>
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink>
-                  <Link to="/03-react/support">Support</Link>
-                </NavLink>
-              </NavItem>
-            </Nav>
-            <NavbarText>Simple Text</NavbarText>
-        </Navbar>
-        <Switch>
-          <Route exact path="/03-react">
-            <Home />
-          </Route>
-          <Route path="/03-react/support">
-            <Support />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+    <div>
+      <h1>{countState.name}</h1>
+      <h1>Count: {countState.count}</h1>
+      <button onClick={handleIncrementCount}>+</button>
+      <button onClick={handleDecrementCount}>-</button>
+    </div>
   )
 }
 
