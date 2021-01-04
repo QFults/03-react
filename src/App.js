@@ -29,14 +29,14 @@ const App = () => {
               </NavItem>
               <NavItem>
                 <NavLink>
-                  <Link to="/support">Support</Link>
+                  <Link to="/03-react/support">Support</Link>
                 </NavLink>
               </NavItem>
             </Nav>
             <NavbarText>Simple Text</NavbarText>
         </Navbar>
         <Switch>
-          <Route exact path="/03-react/">
+          <Route exact path="/03-react">
             <Home />
           </Route>
           <Route path="/03-react/support">
