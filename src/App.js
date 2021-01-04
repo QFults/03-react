@@ -1,32 +1,30 @@
-import ReactTable from 'react-table-v6'
-import 'react-table-v6/react-table.css'
-import people from './people.js'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from 'react-router-dom'
+import Home from './pages/Home'
+import Support from './pages/Support'
 
 const App = () => {
-
-  const columns = [
-    {
-      Header: 'First Name',
-      accessor: 'first_name'
-    },
-    {
-      Header: 'Last Name',
-      accessor: 'last_name'
-    },
-    {
-      Header: 'Email',
-      accessor: 'email'
-    },
-    {
-      Header: 'Title',
-      accessor: 'title'
-    },
-  ]
-
   return (
-    <ReactTable
-      data={people}
-      columns={columns} />
+    <Router>
+      <div>
+        <nav>
+          <Link to="/">Home</Link>
+          <Link to="/support">Support</Link>
+        </nav>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/support">
+            <Support />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   )
 }
 
