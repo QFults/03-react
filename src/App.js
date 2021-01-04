@@ -1,45 +1,33 @@
-import { Component } from 'react'
-import axios from 'axios'
+import ReactTable from 'react-table-v6'
+import 'react-table-v6/react-table.css'
+import people from './people.js'
 
-class App extends Component {
+const App = () => {
 
-  state = {
-    search: '',
-    gifs: []
-  }
+  const columns = [
+    {
+      Header: 'First Name',
+      accessor: 'first_name'
+    },
+    {
+      Header: 'Last Name',
+      accessor: 'last_name'
+    },
+    {
+      Header: 'Email',
+      accessor: 'email'
+    },
+    {
+      Header: 'Title',
+      accessor: 'title'
+    },
+  ]
 
-  handleInputChange = event => {
-    this.setState({ [event.target.name]: event.target.value })
-  }
-
-  handleSearchGIPHY = event => {
-    event.preventDefault()
-    axios.get(`https://api.giphy.com/v1/gifs/search?api_key=so6QOTNdmWKPObKhaL11EhE7gGtpiiqG&q=${this.state.search}&rating=g&limit=10`)
-      .then(({ data: { data: gifs } }) => {
-        this.setState({ gifs, search: '' })
-      })
-      .catch(err => console.error(err))
-  }
-
-  render () {
-    return (
-      <>
-        <form>
-            <input 
-              type="text" 
-              name="search"
-              value={this.state.search}
-              onChange={this.handleInputChange} />
-            <button onClick={this.handleSearchGIPHY}>search</button>
-        </form>
-        <div>
-          {
-            this.state.gifs.map(gif => <img key={gif.id} src={gif.images.original.url} alt={gif.title} />)
-          }
-        </div>
-      </>
-    )
-  }
+  return (
+    <ReactTable
+      data={people}
+      columns={columns} />
+  )
 }
 
 export default App
