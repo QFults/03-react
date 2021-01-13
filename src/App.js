@@ -18,13 +18,13 @@ function App() {
       <div>
         <Navbar />
         <Switch>
-          <Route exact path='/react-portfolio/'>
+          <Route exact path='/03-react/'>
             <Home />
           </Route>
-          <Route path='/react-portfolio/portfolio'>
+          <Route path='/03-react/portfolio'>
             <Portfolio />
           </Route>
-          <Route path='/react-portfolio/contact'>
+          <Route path='/03-react/contact'>
             <Contact />
           </Route>
         </Switch>
