@@ -18,7 +18,7 @@ function App() {
       <div>
         <Navbar />
         <Switch>
-          <Route exact path='/03-react/'>
+          <Route exact path='/03-react'>
             <Home />
           </Route>
           <Route path='/03-react/portfolio'>
