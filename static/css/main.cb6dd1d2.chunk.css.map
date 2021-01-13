@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/components/Crd/Crd.css"],"names":[],"mappings":"AAAA,MACE,wBAAyB,CACzB,WACF","file":"main.cb6dd1d2.chunk.css","sourcesContent":[".grey {\r\n  background-color: #40464f;\r\n  color: ivory;\r\n}"]}
