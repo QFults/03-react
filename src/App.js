@@ -1,29 +1,39 @@
-import { useState } from 'react'
-
-const App = () => {
-
-  const [countState, setCountState] = useState({
-    count: 0,
-    name: 'John Doe'
-  })
-
-  const handleIncrementCount = () => {
-    setCountState({ ...countState, count: countState.count + 1 })
-  }
-
-  const handleDecrementCount = () => {
-    setCountState({ ...countState, count: countState.count - 1 })
-  }
+import React from 'react'
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+} from 'react-router-dom'
+import Navbar from './components/Navbar'
+import Home from './pages/Home'
+import Portfolio from './pages/Portfolio'
+import Contact from './pages/Contact'
 
 
+
+function App() {
   return (
-    <div>
-      <h1>{countState.name}</h1>
-      <h1>Count: {countState.count}</h1>
-      <button onClick={handleIncrementCount}>+</button>
-      <button onClick={handleDecrementCount}>-</button>
-    </div>
-  )
+
+    <Router>
+      <div>
+        <Navbar />
+        <Switch>
+          <Route exact path='/react-portfolio/'>
+            <Home />
+          </Route>
+          <Route path='/react-portfolio/portfolio'>
+            <Portfolio />
+          </Route>
+          <Route path='/react-portfolio/contact'>
+            <Contact />
+          </Route>
+        </Switch>
+
+      </div>
+
+    </Router>
+
+  );
 }
 
-export default App
+export default App;

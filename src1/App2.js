@@ -26,7 +26,8 @@ const App = () => {
   return (
     <ReactTable
       data={people}
-      columns={columns} />
+      columns={columns}
+      defaultPageSize="10" />
   )
 }
 
